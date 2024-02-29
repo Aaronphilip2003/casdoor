@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+
+  casdoor_db:
+    image: mysql:8
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=ChangeThis@1
+      - MYSQL_DATABASE=casdoor
+    ports:
+      - "3306:3306"
+
+  casdoor:
+    image: casbin/casdoor:latest
+    depends_on:
+      - casdoor_db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/conf/casdoor/app.conf:/conf/app.conf
+      - ./backend/conf/casdoor/init_data.json:/init_data.json
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+volumes:
+  mysql-data:
