@@ -1,0 +1,183 @@
+{
+    "organizations": [
+        {
+            "owner": "admin",
+            "name": "your-organization",
+            "displayName": "Your Organization",
+            "websiteUrl": "https://your-organization.com",
+            "favicon": "https://your-organization.com/favicon.ico",
+            "passwordType": "plain",
+            "passwordSalt": "",
+            "phonePrefix": "1",
+            "defaultAvatar": "https://your-organization.com/avatar.png",
+            "masterPassword": "your-master-password"
+        }
+    ],
+    "users": [
+        {
+            "owner": "your-organization",
+            "name": "admin_user",
+            "createdTime": "2024-02-22T12:00:00",
+            "updatedTime": "2024-02-22T12:00:00",
+            "id": "admin_user",
+            "type": "normal-user",
+            "password": "admin-password",
+            "displayName": "Admin User",
+            "avatar": "https://your-organization.com/admin-avatar.png",
+            "email": "admin@your-organization.com",
+            "phone": "1234567890",
+            "address": [
+                "123 Admin St",
+                "Admin City"
+            ],
+            "affiliation": "Your Organization",
+            "tag": "admin",
+            "language": "en",
+            "score": 0,
+            "isOnline": false,
+            "isAdmin": true,
+            "isGlobalAdmin": false,
+            "isForbidden": false,
+            "signupApplication": "app-built-in"
+        },
+        {
+            "owner": "your-organization",
+            "name": "student_user",
+            "createdTime": "2024-02-22T12:00:00",
+            "updatedTime": "2024-02-22T12:00:00",
+            "id": "student_user",
+            "type": "normal-user",
+            "password": "student-password",
+            "displayName": "Student User",
+            "avatar": "https://your-organization.com/student-avatar.png",
+            "email": "student@your-organization.com",
+            "phone": "0987654321",
+            "address": [
+                "321 Student Rd",
+                "Student City"
+            ],
+            "affiliation": "Your Organization",
+            "tag": "student",
+            "language": "en",
+            "score": 0,
+            "isOnline": false,
+            "isAdmin": false,
+            "isGlobalAdmin": false,
+            "isForbidden": false,
+            "signupApplication": "app-built-in"
+        },
+        {
+            "owner": "your-organization",
+            "name": "author_user",
+            "createdTime": "2024-02-22T12:00:00",
+            "updatedTime": "2024-02-22T12:00:00",
+            "id": "author_user",
+            "type": "normal-user",
+            "password": "author-password",
+            "displayName": "Author User",
+            "avatar": "https://your-organization.com/author-avatar.png",
+            "email": "author@your-organization.com",
+            "phone": "2345678901",
+            "address": [
+                "456 Author Ln",
+                "Author City"
+            ],
+            "affiliation": "Your Organization",
+            "tag": "author",
+            "language": "en",
+            "score": 0,
+            "isOnline": false,
+            "isAdmin": false,
+            "isGlobalAdmin": false,
+            "isForbidden": false,
+            "signupApplication": "app-built-in"
+        }
+    ],
+    "roles": [
+        {
+            "owner": "your-organization",
+            "name": "admin",
+            "createdTime": "2024-02-22T12:00:00",
+            "displayName": "Admin",
+            "users": [
+                "admin_user"
+            ]
+        },
+        {
+            "owner": "your-organization",
+            "name": "student",
+            "createdTime": "2024-02-22T12:00:00",
+            "displayName": "Student",
+            "users": [
+                "student_user"
+            ]
+        },
+        {
+            "owner": "your-organization",
+            "name": "author",
+            "createdTime": "2024-02-22T12:00:00",
+            "displayName": "Author",
+            "users": [
+                "author_user"
+            ]
+        }
+    ],
+    "permissions": [
+        {
+            "owner": "your-organization",
+            "name": "admin_all_permissions",
+            "createdTime": "2024-02-22T12:00:00",
+            "displayName": "Admin All Permissions",
+            "users": [
+                "admin_user"
+            ],
+            "roles": [
+                "admin"
+            ],
+            "resources": [
+                "*"
+            ],
+            "actions": [
+                "*"
+            ],
+            "effect": "allow"
+        },
+        {
+            "owner": "your-organization",
+            "name": "student_read_books",
+            "createdTime": "2024-02-22T12:00:00",
+            "displayName": "Student Read Books",
+            "users": [],
+            "roles": [
+                "student"
+            ],
+            "resources": [
+                "book"
+            ],
+            "actions": [
+                "read"
+            ],
+            "effect": "allow"
+        },
+        {
+            "owner": "your-organization",
+            "name": "author_crud_books",
+            "createdTime": "2024-02-22T12:00:00",
+            "displayName": "Author CRUD Books",
+            "users": [],
+            "roles": [
+                "author"
+            ],
+            "resources": [
+                "book"
+            ],
+            "actions": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ],
+            "effect": "allow"
+        }
+    ]
+}
